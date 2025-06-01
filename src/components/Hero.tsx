@@ -28,11 +28,11 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center p-6">
               <div className="text-4xl mb-4">💰</div>
               <h3 className="text-xl font-semibold text-amber-800 mb-2">Harga Terjangkau</h3>
-              <p className="text-amber-600">Mulai dari Rp 7.000, nikmati kopi berkualitas</p>
+              <p className="text-amber-600">Mulai dari Rp 6.000, nikmati kopi berkualitas</p>
             </div>
             
             <div className="text-center p-6">
@@ -41,11 +41,6 @@ const Hero = () => {
               <p className="text-amber-600">Biji kopi premium dengan roasting yang sempurna</p>
             </div>
             
-            <div className="text-center p-6">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold text-amber-800 mb-2">Pesanan Cepat</h3>
-              <p className="text-amber-600">Siap dalam 3 menit, hemat waktu Anda</p>
-            </div>
           </div>
         </div>
       </div>

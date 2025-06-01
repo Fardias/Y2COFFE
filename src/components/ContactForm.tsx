@@ -14,10 +14,10 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
-    if (!formData.nama || !formData.pesan) {
+    if (!formData.pesan) {
       toast({
         title: "Error",
-        description: "Harap lengkapi semua field yang diperlukan",
+        description: "Harap isi kritik dan saran Anda",
         variant: "destructive"
       });
       return;
@@ -48,6 +48,7 @@ const ContactForm = () => {
         toast({
           title: "Berhasil!",
           description: "Kritik dan saran Anda telah berhasil dikirim. Terima kasih!",
+          variant: "success"
         });
         setFormData({ nama: "", pesan: "" });
       } else {
@@ -90,8 +91,7 @@ const ContactForm = () => {
                 value={formData.nama}
                 onChange={(e) => setFormData(prev => ({ ...prev, nama: e.target.value }))}
                 className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                placeholder="Masukkan nama Anda"
-                required
+                placeholder="Masukkan nama Anda (opsional)"
               />
             </div>
 

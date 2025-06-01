@@ -9,8 +9,7 @@ Y2COFFEE adalah destinasi kopi premium yang menghadirkan pengalaman kopi terbaik
 ## 🌟 Keunggulan Kami
 
 - **Kopi Premium** - Menggunakan biji kopi pilihan terbaik dengan roasting yang sempurna
-- **Harga Terjangkau** - Mulai dari Rp 7.000, Anda sudah bisa menikmati kopi premium
-- **Pesanan Cepat** - Siap dalam 3 menit, hemat waktu Anda
+- **Harga Terjangkau** - Mulai dari Rp 6.000, Anda sudah bisa menikmati kopi premium
 - **Suasana Nyaman** - Tempat yang cozy untuk bersantai atau bekerja
 
 ## ☕ Menu Andalan
