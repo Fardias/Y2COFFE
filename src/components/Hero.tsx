@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="text-center p-6">
               <div className="text-4xl mb-4">💰</div>
               <h3 className="text-xl font-semibold text-amber-800 mb-2">Harga Terjangkau</h3>
-              <p className="text-amber-600">Mulai dari Rp 15.000, nikmati kopi berkualitas</p>
+              <p className="text-amber-600">Mulai dari Rp 7.000, nikmati kopi berkualitas</p>
             </div>
             
             <div className="text-center p-6">

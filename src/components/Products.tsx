@@ -11,7 +11,7 @@ const Products = () => {
           </h2>
           <p className="text-xl text-amber-600 max-w-2xl mx-auto">
             Nikmati kopi berkualitas dengan harga yang ramah di kantong. 
-            Mulai dari Rp 15.000, Anda sudah bisa menikmati kopi premium kami.
+            Mulai dari Rp 7.000, Anda sudah bisa menikmati kopi premium kami.
           </p>
           <div className="mt-4 h-1 w-24 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
         </div>

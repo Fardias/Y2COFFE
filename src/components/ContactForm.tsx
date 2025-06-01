@@ -82,7 +82,7 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="nama" className="block text-sm font-medium text-amber-700 mb-2">
-                Nama Lengkap *
+                Nama *
               </label>
               <input
                 type="text"
@@ -90,7 +90,7 @@ const ContactForm = () => {
                 value={formData.nama}
                 onChange={(e) => setFormData(prev => ({ ...prev, nama: e.target.value }))}
                 className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                placeholder="Masukkan nama lengkap Anda"
+                placeholder="Masukkan nama Anda"
                 required
               />
             </div>
