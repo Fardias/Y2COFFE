@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Y2COFFEE - Kopi Premium dengan Harga Bersahabat 🎉
 
-## Project info
+![Y2COFFEE Banner](public/icons.svg)
 
-**URL**: https://lovable.dev/projects/05f59dd0-dc52-4dcc-b393-a65375220427
+## ✨ Tentang Y2COFFEE
 
-## How can I edit this code?
+Y2COFFEE adalah destinasi kopi premium yang menghadirkan pengalaman kopi terbaik dengan harga yang ramah di kantong. Kami percaya bahwa kopi berkualitas tidak harus mahal, dan setiap orang berhak menikmati secangkir kopi yang sempurna.
 
-There are several ways of editing your application.
+## 🌟 Keunggulan Kami
 
-**Use Lovable**
+- **Kopi Premium** - Menggunakan biji kopi pilihan terbaik dengan roasting yang sempurna
+- **Harga Terjangkau** - Mulai dari Rp 15.000, Anda sudah bisa menikmati kopi premium
+- **Pesanan Cepat** - Siap dalam 3 menit, hemat waktu Anda
+- **Suasana Nyaman** - Tempat yang cozy untuk bersantai atau bekerja
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/05f59dd0-dc52-4dcc-b393-a65375220427) and start prompting.
+## ☕ Menu Andalan
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Espresso** - Shot kopi murni dengan crema sempurna
+- **Cappuccino** - Perpaduan espresso, susu steamed, dan foam lembut
+- **Latte** - Espresso dengan susu creamy yang nikmat
+- **Americano** - Kopi hitam yang rich namun tidak terlalu pekat
+- **Cold Brew** - Kopi dingin dengan rasa smooth dan less acidic
 
-**Use your preferred IDE**
+## 🚀 Teknologi Website
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Website Y2COFFEE dibangun dengan teknologi modern untuk memberikan pengalaman terbaik:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React + TypeScript** - Untuk performa dan keamanan yang optimal
+- **Tailwind CSS** - Desain responsif dan modern
+- **Vite** - Build tool yang cepat dan efisien
+- **React Router** - Navigasi yang mulus antar halaman
 
-Follow these steps:
+## 📱 Fitur Website
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Responsive Design** - Tampilan optimal di semua perangkat
+- **Menu Interaktif** - Navigasi mudah ke semua produk
+- **WhatsApp Integration** - Pesan langsung via WhatsApp
+- **SEO Optimized** - Mudah ditemukan di mesin pencari
+- **Fast Loading** - Performa website yang cepat
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🎯 Target Pasar
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Pecinta kopi yang mencari kualitas dengan harga terjangkau
+- Profesional yang membutuhkan kopi untuk produktivitas
+- Mahasiswa yang mencari tempat nyaman untuk belajar
+- Pengusaha yang ingin menikmati kopi sambil bekerja
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 💡 Value Proposition
 
-**Edit a file directly in GitHub**
+"Kopi Premium dengan Harga Bersahabat" - Kami menghadirkan pengalaman kopi terbaik tanpa menguras kantong Anda.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌐 Kontak & Sosial Media
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎁 Promo Spesial
 
-## What technologies are used for this project?
+- **Pembeli Pertama** - Diskon 50% untuk pembelian pertama
+- **Paket Hemat** - Beli 3 gratis 1 untuk menu pilihan
+- **Member Card** - Dapatkan poin reward setiap pembelian
+- **Weekend Special** - Menu spesial setiap akhir pekan
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/05f59dd0-dc52-4dcc-b393-a65375220427) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2025 Y2COFFEE. All rights reserved.
