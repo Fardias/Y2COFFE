@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu, X, Coffee } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -57,43 +56,41 @@ const Header = () => {
       </header>
 
       {/* Mobile Sidebar */}
-      {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black/50" 
-            onClick={() => setIsSidebarOpen(false)}
-          ></div>
-          
-          {/* Sidebar */}
-          <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300">
-            <div className="flex items-center justify-between p-4 border-b">
-              <div className="flex items-center space-x-2">
-                <Coffee className="h-6 w-6 text-amber-600" />
-                <span className="text-lg font-bold text-amber-800">Y2COFFEE</span>
-              </div>
-              <button
-                onClick={() => setIsSidebarOpen(false)}
-                className="p-2 rounded-md text-amber-600"
-              >
-                <X className="h-5 w-5" />
-              </button>
+      <div className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div 
+          className={`fixed inset-0 bg-black/50 transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setIsSidebarOpen(false)}
+        ></div>
+        
+        {/* Sidebar */}
+        <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex items-center justify-between p-4 border-b">
+            <div className="flex items-center space-x-2">
+              <Coffee className="h-6 w-6 text-amber-600" />
+              <span className="text-lg font-bold text-amber-800">Y2COFFEE</span>
             </div>
-            
-            <nav className="flex flex-col p-4 space-y-4">
-              {navigation.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-amber-700 hover:text-amber-900 font-medium py-2 px-4 rounded-lg hover:bg-amber-50 transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </nav>
+            <button
+              onClick={() => setIsSidebarOpen(false)}
+              className="p-2 rounded-md text-amber-600"
+            >
+              <X className="h-5 w-5" />
+            </button>
           </div>
+          
+          <nav className="flex flex-col p-4 space-y-4">
+            {navigation.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="text-left text-amber-700 hover:text-amber-900 font-medium py-2 px-4 rounded-lg hover:bg-amber-50 transition-colors duration-200"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
         </div>
-      )}
+      </div>
     </>
   );
 };

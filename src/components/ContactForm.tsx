@@ -7,14 +7,14 @@ const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     nama: '',
-    kritikSaran: ''
+    pesan: ''
   });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.nama || !formData.kritikSaran) {
+  
+    if (!formData.nama || !formData.pesan) {
       toast({
         title: "Error",
         description: "Harap lengkapi semua field yang diperlukan",
@@ -22,24 +22,37 @@ const ContactForm = () => {
       });
       return;
     }
-
+  
     setIsLoading(true);
-
+  
     try {
-      // Simulasi API call ke Google Sheets
-      // Dalam implementasi nyata, Anda perlu mengganti dengan endpoint Google Sheets API yang sebenarnya
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Berhasil!",
-        description: "Kritik dan saran Anda telah berhasil dikirim. Terima kasih!",
+      // Ubah data menjadi URL-encoded string
+      const formEncodedData = new URLSearchParams({
+        nama: formData.nama,
+        pesan: formData.pesan
+      }).toString();
+  
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwPI3ZVzHe22My5XhlmpIG0KPHMxxXjebUaQvnK63905bhI_mwxwEmxdnRc19AFS2ihGQ/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formEncodedData
       });
-
-      // Reset form
-      setFormData({
-        nama: '',
-        kritikSaran: ''
-      });
+  
+      if (!response.ok) throw new Error("Gagal mengirim");
+  
+      const result = await response.json();
+  
+      if (result.status === "success") {
+        toast({
+          title: "Berhasil!",
+          description: "Kritik dan saran Anda telah berhasil dikirim. Terima kasih!",
+        });
+        setFormData({ nama: "", pesan: "" });
+      } else {
+        throw new Error(result.message || "Error server");
+      }
     } catch (error) {
       toast({
         title: "Error",
@@ -50,6 +63,7 @@ const ContactForm = () => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
@@ -82,14 +96,14 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="kritikSaran" className="block text-sm font-medium text-amber-700 mb-2">
+              <label htmlFor="pesan" className="block text-sm font-medium text-amber-700 mb-2">
                 Kritik dan Saran *
               </label>
               <textarea
-                id="kritikSaran"
+                id="pesan"
                 rows={5}
-                value={formData.kritikSaran}
-                onChange={(e) => setFormData(prev => ({ ...prev, kritikSaran: e.target.value }))}
+                value={formData.pesan}
+                onChange={(e) => setFormData(prev => ({ ...prev, pesan: e.target.value }))}
                 className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all resize-none"
                 placeholder="Bagikan kritik dan saran Anda untuk membantu kami memberikan pelayanan yang lebih baik..."
                 required
@@ -115,18 +129,7 @@ const ContactForm = () => {
             </button>
           </form>
 
-          <div className="mt-6 p-4 bg-amber-50 rounded-lg">
-            <h3 className="font-semibold text-amber-800 mb-2">Catatan untuk Google Sheets API:</h3>
-            <p className="text-sm text-amber-600">
-              Untuk mengaktifkan integrasi Google Sheets, Anda perlu:
-            </p>
-            <ol className="text-sm text-amber-600 list-decimal list-inside mt-2 space-y-1">
-              <li>Membuat Google Sheets API credentials</li>
-              <li>Mengatur spreadsheet ID dan range</li>
-              <li>Mengganti endpoint API di kode form ini</li>
-              <li>Menambahkan API key ke environment variables</li>
-            </ol>
-          </div>
+          
         </div>
       </div>
     </section>

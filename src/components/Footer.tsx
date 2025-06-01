@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Coffee className="h-8 w-8 text-amber-400" />
-              <span className="text-2xl font-bold">BrewMaster</span>
+              <span className="text-2xl font-bold">Y2COFFE</span>
             </div>
             <p className="text-amber-200 mb-4">
               Menyajikan kopi terbaik dengan cita rasa autentik untuk pengalaman yang tak terlupakan.
@@ -32,18 +32,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-amber-300">Kontak</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-amber-400" />
-                <span className="text-amber-200">Jl. Kopi Nikmat No. 123, Jakarta</span>
-              </div>
+             
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-amber-400" />
-                <span className="text-amber-200">+62 812-3456-7890</span>
+                <span className="text-amber-200">+62 878-8235-5688</span>
               </div>
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-amber-400" />
                 <span className="text-amber-200">info@brewmaster.com</span>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -87,7 +84,7 @@ const Footer = () => {
           </div>
 
           {/* Business Hours */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4 text-amber-300">Jam Buka</h3>
             <div className="space-y-2 text-amber-200">
               <div className="flex justify-between">
@@ -99,12 +96,12 @@ const Footer = () => {
                 <span>08:00 - 23:00</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-amber-800 mt-8 pt-8 text-center">
           <p className="text-amber-300">
-            &copy; 2024 BrewMaster Coffee Shop. All rights reserved.
+            &copy; 2025 Y2COFFE. All rights reserved.
           </p>
         </div>
       </div>
