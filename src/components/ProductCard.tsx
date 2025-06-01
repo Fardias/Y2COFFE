@@ -1,12 +1,14 @@
 
+import { useNavigate } from "react-router-dom";
 import { Product } from "../data/products";
 
 interface ProductCardProps {
   product: Product;
-  onViewDetails: () => void;
 }
 
-const ProductCard = ({ product, onViewDetails }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
+  const navigate = useNavigate();
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -15,10 +17,8 @@ const ProductCard = ({ product, onViewDetails }: ProductCardProps) => {
     }).format(price);
   };
 
-  const handleWhatsAppOrder = () => {
-    const message = `Halo, saya ingin memesan ${product.name} seharga ${formatPrice(product.price)}. Apakah masih tersedia?`;
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleViewDetails = () => {
+    navigate(`/product/${product.id}`);
   };
 
   return (
@@ -41,20 +41,12 @@ const ProductCard = ({ product, onViewDetails }: ProductCardProps) => {
           <span className="text-2xl font-bold text-orange-600">{formatPrice(product.price)}</span>
         </div>
         
-        <div className="flex flex-col gap-2">
-          <button
-            onClick={onViewDetails}
-            className="w-full px-4 py-2 bg-amber-100 text-amber-700 rounded-lg font-medium hover:bg-amber-200 transition-colors duration-200"
-          >
-            Lihat Detail
-          </button>
-          <button
-            onClick={handleWhatsAppOrder}
-            className="w-full px-4 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all duration-200 hover:scale-105"
-          >
-            Pesan via WhatsApp
-          </button>
-        </div>
+        <button
+          onClick={handleViewDetails}
+          className="w-full px-4 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-all duration-200 hover:scale-105"
+        >
+          Lihat Detail
+        </button>
       </div>
     </div>
   );

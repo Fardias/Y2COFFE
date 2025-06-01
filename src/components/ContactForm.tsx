@@ -1,14 +1,12 @@
 
 import { useState } from "react";
-import { Star, Send, Loader } from "lucide-react";
+import { Send, Loader } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     nama: '',
-    email: '',
-    rating: 0,
     kritikSaran: ''
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +14,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.nama || !formData.email || !formData.kritikSaran || formData.rating === 0) {
+    if (!formData.nama || !formData.kritikSaran) {
       toast({
         title: "Error",
         description: "Harap lengkapi semua field yang diperlukan",
@@ -40,8 +38,6 @@ const ContactForm = () => {
       // Reset form
       setFormData({
         nama: '',
-        email: '',
-        rating: 0,
         kritikSaran: ''
       });
     } catch (error) {
@@ -53,10 +49,6 @@ const ContactForm = () => {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleRatingClick = (rating: number) => {
-    setFormData(prev => ({ ...prev, rating }));
   };
 
   return (
@@ -74,60 +66,19 @@ const ContactForm = () => {
 
         <div className="bg-white rounded-xl shadow-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="nama" className="block text-sm font-medium text-amber-700 mb-2">
-                  Nama Lengkap *
-                </label>
-                <input
-                  type="text"
-                  id="nama"
-                  value={formData.nama}
-                  onChange={(e) => setFormData(prev => ({ ...prev, nama: e.target.value }))}
-                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                  placeholder="Masukkan nama lengkap Anda"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-amber-700 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
-                  placeholder="contoh@email.com"
-                  required
-                />
-              </div>
-            </div>
-
             <div>
-              <label className="block text-sm font-medium text-amber-700 mb-2">
-                Rating *
+              <label htmlFor="nama" className="block text-sm font-medium text-amber-700 mb-2">
+                Nama Lengkap *
               </label>
-              <div className="flex space-x-1">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    onClick={() => handleRatingClick(star)}
-                    className="focus:outline-none transition-colors"
-                  >
-                    <Star
-                      className={`h-8 w-8 ${
-                        star <= formData.rating
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
-                      } hover:text-yellow-400 transition-colors`}
-                    />
-                  </button>
-                ))}
-              </div>
+              <input
+                type="text"
+                id="nama"
+                value={formData.nama}
+                onChange={(e) => setFormData(prev => ({ ...prev, nama: e.target.value }))}
+                className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+                placeholder="Masukkan nama lengkap Anda"
+                required
+              />
             </div>
 
             <div>

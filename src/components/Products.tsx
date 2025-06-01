@@ -1,14 +1,10 @@
 
-import { useState } from "react";
-import { products, Product } from "../data/products";
+import { products } from "../data/products";
 import ProductCard from "./ProductCard";
-import ProductModal from "./ProductModal";
 
 const Products = () => {
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="menu" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-amber-800 mb-4">
@@ -25,18 +21,10 @@ const Products = () => {
             <ProductCard
               key={product.id}
               product={product}
-              onViewDetails={() => setSelectedProduct(product)}
             />
           ))}
         </div>
       </div>
-
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
     </section>
   );
 };

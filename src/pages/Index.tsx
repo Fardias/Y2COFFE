@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
+import About from "../components/About";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -22,6 +23,7 @@ const Index = () => {
       }`}>
         <Hero />
         <Products />
+        <About />
         <ContactForm />
       </main>
       <Footer />
